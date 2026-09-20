@@ -1344,3 +1344,87 @@ footer a:hover {
     grid-template-columns: 1fr 1fr
   }
 }
+
+/* ===== mobile fixes ===== */
+
+/* 2-up product grid on phones, not 1-up */
+@media (max-width:540px){
+  .grid{grid-template-columns:repeat(2,1fr);gap:.9rem}
+  .card{padding:.55rem}
+  .card .price{font-size:1.02rem}
+  .card h3{font-size:.86rem}
+  .card p{display:none}                 /* description is noise at this width */
+  .card .pill{display:none}
+  .card .buys{grid-template-columns:1fr}  /* one full-width action per card */
+  .card .buys .btn.soft{display:none}     /* Buy Now only; Add to Cart lives on the product page */
+}
+@media (max-width:380px){
+  .grid{gap:.7rem}
+  .card .buys .btn{padding:.6rem .5rem;font-size:.78rem}
+}
+
+/* header: room for the burger, nothing else competing */
+@media (max-width:980px){
+  .bar{grid-template-columns:1fr auto;height:62px}
+  .icons{gap:.5rem}
+  .icons .iconbtn{display:none}          /* Shop link moves into the drawer */
+  .icons .cartbtn{display:flex;padding:.5rem;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+  .burger{min-width:44px;min-height:44px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+  .logo img{width:36px;height:36px}
+}
+@media (max-width:520px){.logo b{display:none}}
+
+/* drawer: full nav, comfortable taps */
+.drawer a{padding:1rem 0;font-size:.95rem}
+.drawer .sep{display:block;font-size:.72rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);padding:1.1rem 0 .3rem;border-bottom:0}
+
+/* hero: less vertical space on a small screen */
+@media (max-width:540px){
+  .hero{min-height:0;padding-block:2.25rem}
+  .hero h1{font-size:1.9rem;max-width:none}
+  .hero p{font-size:.92rem}
+  .promos{gap:.7rem}
+  .promo{min-height:200px}
+}
+
+/* shop controls: stack cleanly instead of wrapping oddly */
+@media (max-width:720px){
+  .shopbar{flex-direction:column;align-items:stretch;gap:.85rem}
+  .shopbar > div{display:grid!important;grid-template-columns:1fr auto;gap:.6rem;align-items:center}
+  .shopbar input[type="search"]{grid-column:1 / -1;width:100%;min-height:44px}
+  .sort{min-height:44px}
+  .filters a{padding:.65rem 1rem}
+}
+
+/* bigger tap targets */
+.qty button{min-width:44px;min-height:44px}
+.chips button{min-height:44px}
+.thumbs button{width:64px}
+
+/* product page: sticky bar must not cover the footer */
+@media (max-width:860px){
+  body{padding-bottom:0}
+  .stickybuy{padding-bottom:calc(.75rem + env(safe-area-inset-bottom,0px))}
+  footer{padding-bottom:84px}
+  .product{gap:1.5rem}
+  .detail .price{font-size:1.6rem}
+  .actions{display:none}             /* the sticky bar already carries these */
+}
+
+/* checkout: show the total before the long form */
+@media (max-width:860px){
+  .cartgrid{display:flex;flex-direction:column}
+  .summary{order:-1;position:static}
+  .line{grid-template-columns:72px 1fr;gap:.85rem}
+  .line img{width:72px}
+  .line > div:last-child{grid-column:2;margin-top:.4rem}
+}
+
+/* footer columns: 2-up reads better than cramped 4-up */
+@media (max-width:560px){
+  .fgrid{grid-template-columns:1fr 1fr;gap:1.5rem}
+  .fgrid > div:first-child{grid-column:1 / -1}
+  .news{max-width:none}
+  .trust .wrap{text-align:left}
+}
