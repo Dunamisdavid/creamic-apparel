@@ -1339,6 +1339,42 @@ footer a:hover {
   font-size: .82rem
 }
 
+/* ===== help pages ===== */
+.info{display:grid;grid-template-columns:220px 1fr;gap:clamp(1.5rem,5vw,4rem);
+  padding-bottom:clamp(2.5rem,6vw,4rem);align-items:start}
+.infonav{position:sticky;top:96px;display:flex;flex-direction:column}
+.infonav .sep{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);padding-bottom:.6rem}
+.infonav a{padding:.6rem 0 .6rem .9rem;border-left:2px solid var(--rule);color:var(--muted);font-size:.92rem}
+.infonav a.active{border-left-color:var(--brown);color:var(--ink);font-weight:500}
+.infobody{max-width:44rem}
+.infobody h1{font-size:clamp(1.8rem,3.6vw,2.5rem)}
+.infobody .lead{color:var(--muted);font-size:1.05rem;margin-top:.6rem}
+.infobody h2{font-size:1.3rem;margin-top:2.25rem;margin-bottom:.6rem}
+.infobody p{margin-top:.75rem}
+.infobody a{text-decoration:underline;text-underline-offset:3px}
+.infobody .btn{text-decoration:none}
+.dots{margin:.75rem 0 0 1.1rem}
+.dots li{margin-top:.45rem}
+.steps-list{margin:1.25rem 0 0 1.2rem}
+.steps-list li{margin-top:.8rem;padding-left:.3rem}
+.tablewrap{overflow-x:auto;margin-top:.75rem;border:1px solid var(--rule);border-radius:10px}
+.info-table{width:100%;border-collapse:collapse;font-size:.9rem;background:var(--card)}
+.info-table th{text-align:left;font-size:.74rem;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);background:var(--soft);padding:.7rem .9rem}
+.info-table td{padding:.7rem .9rem;border-top:1px solid var(--rule);white-space:nowrap}
+.helpbox{margin-top:2.75rem;background:var(--soft);border-radius:var(--r);padding:1.25rem 1.4rem}
+.helpbox p{margin-top:.3rem}
+.btn.off{opacity:.45;pointer-events:none}
+@media (max-width:860px){
+  .info{grid-template-columns:1fr}
+  .infonav{position:static;flex-direction:row;gap:.4rem;overflow-x:auto;scrollbar-width:none}
+  .infonav::-webkit-scrollbar{display:none}
+  .infonav .sep{display:none}
+  .infonav a{flex:none;border:1px solid var(--rule);border-radius:999px;padding:.55rem 1rem;font-size:.85rem}
+  .infonav a.active{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+}
+
 @media (max-width:860px) {
   .fgrid {
     grid-template-columns: 1fr 1fr
@@ -1428,3 +1464,4 @@ footer a:hover {
   .news{max-width:none}
   .trust .wrap{text-align:left}
 }
+
